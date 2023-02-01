@@ -1,0 +1,14 @@
+.items {
+  text-align: left;
+  margin-left: 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boton {
+  align-self: center;
+  margin-right: 2rem;
+}
