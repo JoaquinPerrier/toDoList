@@ -30,6 +30,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #e2c5b6;
 }
 
 h1 {
@@ -67,4 +68,12 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.cuaderno {
+  width: 60%;
+  height: 50rem;
+  background-color: #fef2f2;
+  border: 1.5px solid rgba(0, 0, 0, 0.457);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
