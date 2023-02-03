@@ -12,8 +12,8 @@ const Item = ({ info, index }) => {
   return (
     <div className={styles.container}>
       <h4 className={styles.items}>• {info}</h4>
-      <button className={styles.boton} onClick={deleteItem}>
-        Quitar del listado!
+      <button className={styles.boton} onClick={deleteItem} index={index}>
+        `Quitar del listado!`
       </button>
     </div>
   );
