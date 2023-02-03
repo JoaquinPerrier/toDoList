@@ -5,6 +5,7 @@ const Form = ({ list, setList }) => {
 
   const createItem = (e) => {
     e.preventDefault();
+    console.log(e);
     let nuevoArray = [...list, input];
     setList(nuevoArray);
   };

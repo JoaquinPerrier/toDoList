@@ -12,20 +12,13 @@ function App() {
     "Llevar tele a reparar",
   ]);
 
-  const deleteItem = (key) => {
-    console.log(key);
-    // setList((current) =>
-    //   current.filter((item) => item.id != 2)
-    // );
-  };
-
   return (
     <div>
       <Form list={list} setList={setList} />
       <div className="cuaderno">
         <Title />
         {list.map((el, index) => {
-          return <Item info={el} key={index} handleDelete={deleteItem} />;
+          return <Item info={el} key={index} index={index} />;
         })}
       </div>
     </div>
