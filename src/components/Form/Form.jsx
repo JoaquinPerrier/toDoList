@@ -5,8 +5,9 @@ const Form = ({ list, setList }) => {
 
   const createItem = (e) => {
     e.preventDefault();
-    console.log(e);
+
     let nuevoArray = [...list, input];
+    localStorage.setItem("toDoList", JSON.stringify(nuevoArray));
     setList(nuevoArray);
   };
 
@@ -17,6 +18,7 @@ const Form = ({ list, setList }) => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          required
         />
         <button type="submit">Agregar a la lista!</button>
       </form>

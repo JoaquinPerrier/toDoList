@@ -5,12 +5,19 @@ import Item from "./components/Item/Item";
 import Title from "./components/Title/Title";
 
 function App() {
-  const [list, setList] = useState([
-    "Ir al super",
-    "Pagar alquiler",
-    "Comprar fruta",
-    "Llevar tele a reparar",
-  ]);
+  let listadoDeProductos = [];
+
+  listadoDeProductos = JSON.parse(localStorage.getItem("toDoList"));
+
+  console.log(listadoDeProductos);
+
+  const [list, setList] = useState(listadoDeProductos);
+
+  const deleteItem = (index) => {
+    let newList = list.filter((el) => el != list[index]);
+    localStorage.setItem("toDoList", JSON.stringify(newList));
+    setList(newList);
+  };
 
   return (
     <div>
@@ -18,7 +25,9 @@ function App() {
       <div className="cuaderno">
         <Title />
         {list.map((el, index) => {
-          return <Item info={el} key={index} index={index} />;
+          return (
+            <Item info={el} key={index} index={index} deleteItem={deleteItem} />
+          );
         })}
       </div>
     </div>
